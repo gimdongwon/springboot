@@ -32,13 +32,12 @@ public class PostsApiControllerTest {
     private PostsRepository postsRepository;
 
     @After
-    public void tearDwon() throws Exception {
+    public void tearDown() throws Exception {
         postsRepository.deleteAll();
     }
-
     @Test
     public void Posts_등록된다() throws Exception {
-        // given
+        //given
         String title = "title";
         String content = "content";
         PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
@@ -46,12 +45,13 @@ public class PostsApiControllerTest {
                 .content(content)
                 .author("author")
                 .build();
+
         String url = "http://localhost:" + port + "/api/v1/posts";
 
-        // when
+        //when
         ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);
 
-        // then
+        //then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(responseEntity.getBody()).isGreaterThan(0L);
 
@@ -59,5 +59,4 @@ public class PostsApiControllerTest {
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
     }
-
 }
