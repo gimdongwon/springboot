@@ -1,5 +1,6 @@
 package com.dongwon.book.domain.posts;
 
+import com.dongwon.book.damain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter // 롬복 어노테이
 @NoArgsConstructor // 롬복 어노테이션
 @Entity // JPA 어노테이션션으로 테이블과 링크될 클래스, 기본값으로 클래스의 카멜 케이스 이름을 언더스코어 네이밍으로 테이블 이름을 매칭한다.
-public class Posts {
+public class Posts extends BaseTimeEntity {
     // Entity 클래스에서 절대 Setter 메소드를 만들지 않는다.
 
     @Id
