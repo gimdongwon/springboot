@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 // Application class 는 이 프로젝트의 메인 클래스.
 
-@EnableJpaAuditing // jpa auditing 활성화
+// @EnableJpaAuditing // jpa auditing 활성화
 @SpringBootApplication
 // └ 역할 : 스프링 부트의 자동설정, 스프링 Bean읽기와 생성 모두 자동으로 설정.
 //          @SpringBootApplication이 있는 위치부터 설정을 읽어가기 때문에
