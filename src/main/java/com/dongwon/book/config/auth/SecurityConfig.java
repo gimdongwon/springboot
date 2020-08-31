@@ -31,6 +31,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                     .oauth2Login()
                         .userInfoEndpoint()
-                            .userService((OAuth2UserService<OAuth2UserRequest, OAuth2User>) customOAuth2UserService);
+                            .userService(customOAuth2UserService);
     }
 }
